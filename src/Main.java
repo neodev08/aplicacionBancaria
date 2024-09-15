@@ -31,9 +31,15 @@ public class Main {
                 System.out.println("El saldo actualizado es: " + saldoDisponible + "$");
             } else if(opcion == 2){
                 System.out.println("Ingrese la cantidad a retirar:");
-                double debito = teclado.nextInt();
-                System.out.println("Haz hecho un retiro de :" + debito + "$");
-                saldoDisponible -= debito;
+                double debito = teclado.nextDouble();
+                if(debito > saldoDisponible){
+                    System.out.println("Balance insuficiente, solo tienes: " + saldoDisponible + "$");
+
+                } else {
+                    System.out.println("Haz hecho un retiro de :" + debito + "$");
+                    saldoDisponible -= debito;
+                }
+
                 System.out.println("El saldo actual es: " + saldoDisponible + "$");
             } else if (opcion == 3) {
                 System.out.println("Ingrese el monto del deposito:");
